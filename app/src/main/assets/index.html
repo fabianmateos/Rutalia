@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUTALIA</title>
+<style>
+body{margin:0;background:#f3f6fa;font-family:Arial;color:#183247}
+header{background:#102e40;color:white;padding:28px 20px}
+h1{margin:0;font-size:32px}
+main{padding:20px}
+.card{background:white;padding:20px;border-radius:16px;margin-bottom:18px;box-shadow:0 3px 12px #0001}
+input,select,button{width:100%;box-sizing:border-box;padding:15px;margin:8px 0;border-radius:10px;font-size:16px}
+input,select{border:1px solid #ccd5dc}
+button{background:#087f75;color:white;border:0;font-weight:bold}
+small{color:#657786}
+</style>
+</head>
+<body>
+<header>
+<h1>RUTALIA</h1>
+<p>Conectamos ciudades, acercamos personas.</p>
+</header>
+<main>
+<div class="card">
+<h2>Buscar viaje</h2>
+<input id="origen" placeholder="Ciudad de origen">
+<input id="destino" placeholder="Ciudad de destino">
+<input id="fecha" type="date">
+<select id="tipo">
+<option value="privado">Viaje privado</option>
+<option value="compartido">Viaje compartido</option>
+</select>
+<button onclick="buscar()">Buscar viajes</button>
+</div>
+<div class="card">
+<h2>Publicar un viaje</h2>
+<p>¿Sos conductor? Ofrecé tu recorrido.</p>
+<button onclick="publicar()">Publicar viaje</button>
+</div>
+<div class="card" id="resultado">
+<h2>Bienvenido a RUTALIA</h2>
+<small>Versión de demostración.</small>
+</div>
+</main>
+<script>
+function buscar(){
+let o=document.getElementById("origen").value.trim();
+let d=document.getElementById("destino").value.trim();
+let f=document.getElementById("fecha").value;
+let t=document.getElementById("tipo").value;
+if(!o||!d||!f){alert("Completá origen, destino y fecha");return;}
+document.getElementById("resultado").innerHTML=
+"<h2>Solicitud de prueba</h2><p>"+escapeHtml(o)+" → "+escapeHtml(d)+"</p><p>"+f+"</p><p>Modalidad: "+t+"</p><small>Aún no hay conductores conectados.</small>";
+}
+function publicar(){
+alert("Publicación de viajes: disponible en una próxima versión.");
+}
+function escapeHtml(s){
+return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+</script>
+</body>
+</html>
