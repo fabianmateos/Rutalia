@@ -1,0 +1,8 @@
+RUTALIA Demo - proyecto Android Studio
+1. Descomprimir ZIP en una computadora.
+2. Abrir carpeta RUTALIA_Android en Android Studio.
+3. Esperar sincronizacion Gradle (requiere Internet y Android SDK).
+4. Menu Build > Build Bundle(s) / APK(s) > Build APK(s).
+5. Copiar app/build/outputs/apk/debug/app-debug.apk al celular e instalarlo.
+La app es una demostracion local, sin usuarios ni pagos reales.
+No hay APK compilado en este ZIP.
