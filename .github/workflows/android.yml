@@ -47,7 +47,7 @@ jobs:
           gradle-version: '8.9'
 
       - name: Compilar APK
-        run: gradle assembleDebug
+        run: gradle assembleDebug --stacktrace --info
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
