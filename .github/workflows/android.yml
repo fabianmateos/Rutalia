@@ -22,9 +22,10 @@ jobs:
 
     
       - name: Configurar Android SDK
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          sdkmanager --version
+        uses: android-actions/setup-android@v3
+      
+          
+          
   
         
         
