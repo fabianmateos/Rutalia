@@ -23,6 +23,9 @@ jobs:
     
       - name: Configurar Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: ''
+    
       
           
           
